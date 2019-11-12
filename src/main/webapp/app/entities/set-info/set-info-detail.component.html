@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="setInfo">
+            <h2><span>Set Info</span> {{setInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Geslacht</span></dt>
+                <dd>
+                    <span>{{setInfo.geslacht}}</span>
+                </dd>
+                <dt><span>Naam</span></dt>
+                <dd>
+                    <span>{{setInfo.naam}}</span>
+                </dd>
+                <dt><span>Achternaam</span></dt>
+                <dd>
+                    <span>{{setInfo.achternaam}}</span>
+                </dd>
+                <dt><span>Post Code</span></dt>
+                <dd>
+                    <span>{{setInfo.postCode}}</span>
+                </dd>
+                <dt><span>Huis Nummer</span></dt>
+                <dd>
+                    <span>{{setInfo.huisNummer}}</span>
+                </dd>
+                <dt><span>Straat</span></dt>
+                <dd>
+                    <span>{{setInfo.straat}}</span>
+                </dd>
+                <dt><span>Plaats</span></dt>
+                <dd>
+                    <span>{{setInfo.plaats}}</span>
+                </dd>
+                <dt><span>Telefoon</span></dt>
+                <dd>
+                    <span>{{setInfo.telefoon}}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{setInfo.email}}</span>
+                </dd>
+                <dt><span>Contract</span></dt>
+                <dd>
+                    <span>{{setInfo.contract}}</span>
+                </dd>
+                <dt><span>Telefonisch</span></dt>
+                <dd>
+                    <span>{{setInfo.telefonisch}}</span>
+                </dd>
+                <dt><span>Taal</span></dt>
+                <dd>
+                    <span>{{setInfo.taal}}</span>
+                </dd>
+                <dt><span>Verzend Methode</span></dt>
+                <dd>
+                    <span>{{setInfo.verzendMethode}}</span>
+                </dd>
+                <dt><span>Medewerker</span></dt>
+                <dd>
+                    <div *ngIf="setInfo.medewerkerId">
+                        <a [routerLink]="['/medewerker', setInfo.medewerkerId, 'view']">{{setInfo.medewerkerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/set-info', setInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
