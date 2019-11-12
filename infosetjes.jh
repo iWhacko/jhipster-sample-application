@@ -1,0 +1,39 @@
+entity SetInfo {
+	medewerker Medewerker
+    geslacht String
+    naam String
+    achternaam String
+    postCode String
+    huisNummer String
+    straat String
+    plaats String
+    telefoon String
+    email String
+    contract String
+    telefonisch Boolean
+    taal String
+    verzendMethode String
+}
+
+entity Medewerker {
+	id Number
+	naam String
+    achterNaam String
+}
+
+relationship OneToOne {
+	SetInfo{medewerker} to Medewerker
+}
+
+// Set pagination options
+paginate SetInfo, Medewerker with infinite-scroll
+paginate SetInfo, Medewerker with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
