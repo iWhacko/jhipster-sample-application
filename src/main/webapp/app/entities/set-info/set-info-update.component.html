@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-set-info-heading">Create or edit a Set Info</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_geslacht">Geslacht</label>
+                    <input type="text" class="form-control" name="geslacht" id="field_geslacht"
+                           formControlName="geslacht"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_naam">Naam</label>
+                    <input type="text" class="form-control" name="naam" id="field_naam"
+                           formControlName="naam"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_achternaam">Achternaam</label>
+                    <input type="text" class="form-control" name="achternaam" id="field_achternaam"
+                           formControlName="achternaam"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_postCode">Post Code</label>
+                    <input type="text" class="form-control" name="postCode" id="field_postCode"
+                           formControlName="postCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_huisNummer">Huis Nummer</label>
+                    <input type="text" class="form-control" name="huisNummer" id="field_huisNummer"
+                           formControlName="huisNummer"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_straat">Straat</label>
+                    <input type="text" class="form-control" name="straat" id="field_straat"
+                           formControlName="straat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_plaats">Plaats</label>
+                    <input type="text" class="form-control" name="plaats" id="field_plaats"
+                           formControlName="plaats"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telefoon">Telefoon</label>
+                    <input type="text" class="form-control" name="telefoon" id="field_telefoon"
+                           formControlName="telefoon"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contract">Contract</label>
+                    <input type="text" class="form-control" name="contract" id="field_contract"
+                           formControlName="contract"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telefonisch">Telefonisch</label>
+                    <input type="checkbox" class="form-control" name="telefonisch" id="field_telefonisch"
+                           formControlName="telefonisch"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_taal">Taal</label>
+                    <input type="text" class="form-control" name="taal" id="field_taal"
+                           formControlName="taal"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_verzendMethode">Verzend Methode</label>
+                    <input type="text" class="form-control" name="verzendMethode" id="field_verzendMethode"
+                           formControlName="verzendMethode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_medewerker">Medewerker</label>
+                    <select class="form-control" id="field_medewerker" name="medewerker" formControlName="medewerkerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="medewerkerOption.id" *ngFor="let medewerkerOption of medewerkers; trackBy: trackMedewerkerById">{{medewerkerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
