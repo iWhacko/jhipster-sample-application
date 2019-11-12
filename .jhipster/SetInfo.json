@@ -1,0 +1,77 @@
+{
+    "name": "SetInfo",
+    "fields": [
+        {
+            "fieldName": "geslacht",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "naam",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "achternaam",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "huisNummer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "straat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plaats",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefoon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contract",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefonisch",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "taal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "verzendMethode",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "medewerker",
+            "otherEntityRelationshipName": "setInfo",
+            "relationshipName": "medewerker",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191112092927",
+    "entityTableName": "set_info",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
